@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fastAPI.zoyathiago</title>
+    <link rel="stylesheet" href="\programacion\Clase18\front\css\style.css">
+    <link rel="stylesheet" href="\programacion\Clase18\front\java\api.js">
+    <link rel="stylesheet" href="\programacion\Clase18\front\java\main.js">
+    <link rel="stylesheet" href="\programacion\Clase18\front\java\ui.js">
+</head>
+<header>
+    <nav>
+        <h1>MARCAS DE BOTELLAS</h1>
+            <ul>
+                <li><a href="#POST">opcion agregar</a></li>
+                <li><a href="#PUT">opcion modificar</a></li>
+                <li><a href="#DELETE">opcion eliminar</a></li>
+                <li><a href="#GET">ver botellas</a></li>
+                <li><a href="#GET/ID">ver botella</a></li>
+            </ul>
+    </nav>
+</header>
+<body>
+    <section id="POST">
+        <input type="text" placeholder="nombre de la botella" required>
+        <input type="text" placeholder="creador del producto"required>
+        <input type="float" placeholder="fecha de vencimiento"required>
+        <input type="text" placeholder="si es de vidrio, plastico, lata"required>
+        <input type="text" placeholder="cuantos mililitros o litros contiene"required>
+        <button id="agregar">agregar</button>
+    </section>
+<section id="PUT">
+        <input type="number" placeholder="id del producto" required>
+        <input type="text" placeholder="nombre de la botella" required>
+        <input type="text" placeholder="creador del producto"required>
+        <input type="float" placeholder="fecha de vencimiento"required>
+        <input type="text" placeholder="si es de vidrio, plastico, lata"required>
+        <input type="text" placeholder="cuantos mililitros o litros contiene"require>
+        <button id="modificar">modificar</button>
+</section>
+    <section id="DELETE">
+        <input type="number" placeholder="id del producto" required>
+        <button id="eliminar">eliminar</button>
+    </section>
+<section id="GET">
+        <button id="verbotellas">ver todas las botellas</button>
+</section>
+    <section id="GET-ID">
+        <input type="number" placeholder="id del producto" required>
+        <button id="verbotella">ver solo una botella</button>
+    </section>
+</body>
+</html>
