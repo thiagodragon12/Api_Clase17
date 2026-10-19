@@ -14,6 +14,9 @@
 | TIPO     | str          | "vidrio"     |
 | CANTIDAD | str          | "500ML"     |
 
+
+# COMO INSTALAR Y EJECUTAR EL ARCHIVO
+
    ### Si los valores estan bien argumentados saltara el codigo 201 CREATED, que indica que fue creado, en cambio, si hay un solo dato que este mal, saltara el ERROR 422, que indica que no se ha encontrado o se a puesto mal un dato a crear.
    ### # PUT: le permite al usuario modificar (mediante la id) uno de los objetos modificando todo en el proceso. si esta bien modificada te saltara 200 OK, que indica que todo a salido con exito, per si no es así, saldra el 422.
    ### # DELETE: este proceso le permitira al cliente eliminar una de los objetos ya guardados, si se elimino correctamente, saltara el codigo 200 OK, pero si el id no es existente saltara e 404 ERROR, que vendria a significar que el código 
@@ -81,7 +84,7 @@ Clase18/
 #
 ## Pregunta 1 — El ciclo de vida de una petición  
 
-#### 1°_ Cuando el usuario hace click en "Guardar", solicita la utilización (mediante el CORS) de la api y, una vez que la solicitud es aceptada, permite la conexión a la base de datos, ejecuta el método HTTP "POST" (con su código ya realizado), agrega los valores nuevos a la base de datos, corta la conexion a la base de datos y, por ultimo, le regresa al usuario (mediante un mensaje o una alerta) que su acción ya a sido ejecutada.
+#### 1°_ Cuando el usuario hace click en "Guardar", solicita la utilización (mediante el CORS) de la api y, una vez que la solicitud es aceptada, permite la conexión a la base de datos, ejecuta el método HTTP "POST" (con su código ya realizado), agrega los valores nuevos a la base de datos, corta la conexion a la base de datos y, por ultimo, le regresa al usuario (mediante JSON) que su acción ya a sido ejecutada.
 
 ![este es un texto alternativo](programacion\Clase18\docs\punto1.png)
 

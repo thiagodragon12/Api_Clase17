@@ -31,11 +31,39 @@ h1{
 section{
     background-color:rgb(32, 32, 32);
 }
-#POST, #PUT, #DELETE, #GET, #GET-ID{
+#POST{
     padding:20vh;
     height:100%;
+    width:100%;
     margin-top:10vh;
     display:grid;
-    grid-template-columns: repeat(2, 50vh);
-    grid-template-rows: repeat(3, 3fr);
+    grid-template-columns: repeat(5, 2fr);
+    grid-template-rows: repeat(1, 3fr);
+}
+article{
+    background-color:rgb(54, 36, 20);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(158, 132, 46, 0.2);
+}
+
+th{
+    color: #7ee2a8;
+}
+
+td:last-child{
+    white-space: nowrap;
+    text-align: right;
+}
+
+tr:hover td{
+    background: rgba(158, 132, 46, 0.2);
 }
