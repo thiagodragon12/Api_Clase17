@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fastAPI.zoyathiago</title>
-    <link rel="stylesheet" href="front\css\style.css">
-    <link rel="stylesheet" href="front\java\main.js">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<header>
-    <nav>
-        <h1>MARCAS DE BOTELLAS</h1>
-    </nav>
-</header>
 <body>
-    <section>
-        <form id="formulario">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="nombre de la botella" required>
-            <Label for="creador">Creador:</Label>
-            <input type="text" id="creador" placeholder="creador del producto"required>
-            <label for="fechav">Fecha de vencimiento:</label>
-            <input type="text" id="fechav" placeholder="fecha de vencimiento"required>
-            <label for="tipo">Tipo de botella:</label>
-            <input type="text" id="tipo" placeholder="si es de vidrio, plastico, lata"required>
-            <label for="cantidad">Cantidad de mililitrios/litros:</label>
-            <input type="text" id="cantidad" placeholder="cuantos mililitros o litros contiene"required>
-            <input type="hidden" id="id">
+    <header>
+        <nav>
+            <h1>🍾 Marcas de Botellas</h1>
+        </nav>
+    </header>
 
-            <p id="mensaje"></p>
-            <div class="botones">
-                <button type="submit" class="btn">Guardar</button>
-            </div>
-        </form>
-    </section>
-    <table>
-        <thead>
-            <tr>
-                <th>Botellas:</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody id="tabla"></tbody>
-    </table>
+    <main>
+        <section class="caja caja-formulario">
+            <h2>Nueva botella</h2>
+            <form id="formulario">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="nombre de la botella" required>
+                </div>
+                <div class="campo">
+                    <label for="creador">Creador:</label>
+                    <input type="text" id="creador" placeholder="creador del producto" required>
+                </div>
+                <div class="campo">
+                    <label for="fechav">Fecha de vencimiento:</label>
+                    <input type="text" id="fechav" placeholder="fecha de vencimiento" required>
+                </div>
+                <div class="campo">
+                    <label for="tipo">Tipo de botella:</label>
+                    <input type="text" id="tipo" placeholder="si es de vidrio, plastico, lata" required>
+                </div>
+                <div class="campo">
+                    <label for="cantidad">Cantidad de mililitros/litros:</label>
+                    <input type="text" id="cantidad" placeholder="cuantos mililitros o litros contiene" required>
+                </div>
+                <input type="hidden" id="id">
+
+                <p id="mensaje"></p>
+                <div class="botones">
+                    <button type="submit" class="boton">Guardar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="caja caja-tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Botellas</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tabla"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="java/main.js"></script>
 </body>
 </html>
