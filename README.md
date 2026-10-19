@@ -15,11 +15,34 @@
 | CANTIDAD | str          | "500ML"     |
 
 
-# COMO INSTALAR Y EJECUTAR EL ARCHIVO
-
    ### Si los valores estan bien argumentados saltara el codigo 201 CREATED, que indica que fue creado, en cambio, si hay un solo dato que este mal, saltara el ERROR 422, que indica que no se ha encontrado o se a puesto mal un dato a crear.
    ### # PUT: le permite al usuario modificar (mediante la id) uno de los objetos modificando todo en el proceso. si esta bien modificada te saltara 200 OK, que indica que todo a salido con exito, per si no es así, saldra el 422.
-   ### # DELETE: este proceso le permitira al cliente eliminar una de los objetos ya guardados, si se elimino correctamente, saltara el codigo 200 OK, pero si el id no es existente saltara e 404 ERROR, que vendria a significar que el código 
+   ### # DELETE: este proceso le permitira al cliente eliminar una de los objetos ya guardados, si se elimino correctamente, saltara el codigo 200 OK, pero si el id no es existente saltara e 404 ERROR, que vendria a significar que el código no logra funcionar.
+
+# COMO INSTALAR Y EJECUTAR EL ARCHIVO
+   ## Instalar:
+   ### lo primero y más importante es copiar el repositorio de github, esto se hace con este codigo:
+```
+   git clone https://github.com/thiagodragon12/Api_Clase17.git>
+```
+   ### Una vez hecho esto, deveras tener la terminal conectada con el archivo del repositorio, y... desde ahi crear el entorno virtual:
+```
+   py -m venv env
+```
+   ### desde ahi, lo activara con:
+```
+   source venv/bin/activate (para linux) y env/Scripts/activate (para windows)
+```
+   ### luego de todo esto, descargara todas las dependencias del archivo requirement.txt con el siguiente codigo:
+```
+   pip install -r requirements.txt
+```
+   ## ejecución
+   ### y, abriras la api con uvicorn mediante el siguiente codigo:
+```
+   uvicorn main:app -- reload
+```
+   ### como ultima acción para ejecutarlo, iras al frontend y desde el index (teniendo instalado el Live Server) lo abriras
 
 ## CODIGO DE PRUEBA (GET)
 ***esto daria el código 200***
@@ -46,15 +69,16 @@
 ```
 
 # TECNOLOGIAS USADAS
-* backend
+## backend
       * Python
       * FastAPI
       * SQLite3
       * Pydantic
-* frontend
-   * HTML
-   * CSS
-   * JS (SIN HACER)
+## frontend
+
+      * HTML
+      * CSS
+      * JS 
 # ESTRUCTURA DEL PROYECTO
 ```
 Clase18/
@@ -64,27 +88,28 @@ Clase18/
 │   │   └── ManageresBotella.py    → consultas SQL (ver, agregar, modificar, borrar)
 │   ├── models/
 │   │   └── BaseModel.py           → modelo Pydantic
-│   ├── database.py              → 
+│   ├── database.py               
 │   ├── botellas.db              → base de datos con los objetos creados
 │   │                   
 │   └── requirements.txt
-├── docs           → diagramas
+├── docs           → diagramas, video del programa funcionando
 ├── frontend/                 
 │   ├── index.html
 │   ├── css/
 │   │   └── style.css
-│   └── java          → (no llegue a hacerlos)
-│       ├── main.js    →
-│       ├── api.js     →
-│       ├── ul.js      →
+│   └── java/       
+│       └── main.js    → conecta el front y el back
+│   
+│       
 │
 └── README.md
 
 ```
-#
+# Programa en funcionamiento:
+![este es un texto alternativo](programacion\Clase18\docs\prueba.mp4)
 ## Pregunta 1 — El ciclo de vida de una petición  
 
-#### 1°_ Cuando el usuario hace click en "Guardar", solicita la utilización (mediante el CORS) de la api y, una vez que la solicitud es aceptada, permite la conexión a la base de datos, ejecuta el método HTTP "POST" (con su código ya realizado), agrega los valores nuevos a la base de datos, corta la conexion a la base de datos y, por ultimo, le regresa al usuario (mediante JSON) que su acción ya a sido ejecutada.
+#### 1°_ Cuando el usuario hace click en "Guardar", la acción solicita (mediante CORS) la conexion a la api, (si no escuentra la dirección o no tiene permiso dara el ERROR 422) luego, la acción envia los datos y el header como Json para que el Pydantic los defina y los registre para poder saber si los toma de forma correcta o no, gracias a lo anteriormente dicho, accede al agregar y a las acciones de este mismo (mediante el manager) y desde ahi, ejecuta la acción a realizar y por ultimo, lo ingresa al DB, le manda al usuario el codigo 201 CREATED y... la api regresa los datos de forma json para que se pueda volver a armar la tabla y así, el usuario podra visualizar el guardado del nuevo bojeto creado.
 
 ![este es un texto alternativo](programacion\Clase18\docs\punto1.png)
 
@@ -110,7 +135,14 @@ Clase18/
      * 404 NOT FOUND: este código te indica que no se logra encontrar la pagina o servicio solicitado.
      * 422 UNPROCESSABLE CONTENT: este codigo indica que la sintaxis y la solicitud se entendieron perfectamente, pero... la forma en la que se colocaron los datos no es valida.
 
-![este es un texto alternativo](programacion\Clase18\docs\punto3.png)
+| Operacion | Metodo | Ruta | Codigo de éxito | Código de Error|
+|-------------|:------------:|:--------------:|:---------:|:--------:
+| CREAR       | POST    |   /Agregar-Botella | 201|    |
+| VER         | GET     |   /Ver-Botellas    | 200| 422|
+| MODIFICAR   | PUT     | /Modificar-Botella | 201| 422|
+| ELIMINAR    | DELETE  | /Eliminar-Botella  | 200| 422|
+| VER(ID)     | GET     | /Ver-Botella/{id}  | 200| 422|
+
 
 ## Pregunta 4 — CORS
 

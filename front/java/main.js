@@ -23,7 +23,7 @@ function cargar() {
                     </tr>
                 `;
             });
-            document.getElementById("tabla").innerHTML = fila;
+            document.getElementById("Tabla").innerHTML = fila;
         })
         .catch(() => mostrar("No se pudo conectar con la API."));
 }
